@@ -30,9 +30,9 @@ dependencies = [
     "spacy==3.8.4",
     "tensorboard==2.20.0",
     "tensorboardx==2.6.4",
-    "torch==2.9.1+cu124",
-    "torchaudio==2.9.1+cu124",
-    "torchvision==0.24.1+cu124",
+    "torch==2.5.1+cu124",
+    "torchaudio==2.5.1+cu124",
+    "torchvision==0.20.1+cu124",
     "tqdm==4.67.1",
     "transformers==4.50.0",
 ]
@@ -48,3 +48,7 @@ explicit = true
 torch = { index = "pytorch" }
 torchaudio = { index = "pytorch" }
 torchvision = { index = "pytorch" }
+
+# This fixes the "ValueError: Unable to determine which files to ship"
+[tool.hatch.build.targets.wheel]
+packages = ["."]
