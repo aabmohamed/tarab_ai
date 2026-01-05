@@ -7,7 +7,7 @@ name = "tarab-ai"
 version = "0.1.0"
 description = "Project configuration for Tarab AI"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10, <3.11"
 dependencies = [
     "accelerate==1.6.0",
     "click==8.3.1",
