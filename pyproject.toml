@@ -51,4 +51,8 @@ torchvision = { index = "pytorch" }
 
 # This fixes the "ValueError: Unable to determine which files to ship"
 [tool.hatch.build.targets.wheel]
-packages = ["."]
+packages = ["acestep"]
+
+[project.scripts]
+# This tells UV to create a command named 'acestep' that runs the 'main' function in 'acestep/gui.py'
+acestep = "acestep.gui:main"
