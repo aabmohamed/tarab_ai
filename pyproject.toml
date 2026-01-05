@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tarab-ai"
+version = "0.1.0"
+description = "Project configuration for Tarab AI"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "accelerate==1.6.0",
+    "click==8.3.1",
+    "cutlet==0.5.0",
+    "datasets==3.4.1",
+    "diffusers==0.36.0",
+    "fugashi[unidic-lite]==1.5.2",
+    "gradio==5.50.0",
+    "hangul-romanize==0.1.0",
+    "librosa==0.11.0",
+    "loguru==0.7.3",
+    "matplotlib==3.10.1",
+    "num2words==0.5.14",
+    "numpy==2.2.6",
+    "peft==0.17.1",
+    "py3langid==0.3.0",
+    "pypinyin==0.53.0",
+    "pytorch-lightning==2.5.1",
+    "soundfile==0.13.1",
+    "spacy==3.8.4",
+    "tensorboard==2.20.0",
+    "tensorboardx==2.6.4",
+    "torch==2.9.1+cu124",
+    "torchaudio==2.9.1+cu124",
+    "torchvision==0.24.1+cu124",
+    "tqdm==4.67.1",
+    "transformers==4.50.0",
+]
+
+# Define the PyTorch index for CUDA 12.4 wheels
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+# Explicitly tell UV to look for torch libraries in the defined index
+[tool.uv.sources]
+torch = { index = "pytorch" }
+torchaudio = { index = "pytorch" }
+torchvision = { index = "pytorch" }
